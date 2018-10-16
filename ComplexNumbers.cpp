@@ -93,7 +93,7 @@ class complex
 //operator ++ [post-increment] Overloading
     complex operator++(int)
     {
-      complex temp(*this)
+      complex temp(*this);
       ++(*this);
       return temp;
     }
@@ -102,16 +102,16 @@ class complex
 //operator += adding a complex number
     complex operator+=(complex ob)
     {
-      *this.rl = *this.rl + ob.rl;
-      *this.img = *this.img + ob.img;
+      rl = rl + ob.rl;
+      img = img + ob.img;
       return *this;
     }
 
 //operator == Overloading
-    complex operator==(complex ob)
+    bool operator==(complex ob)
     {
-      if(*this.rl == ob.rl)
-        if(*this.img == ob.img)
+      if(rl == ob.rl)
+        if(img == ob.img)
           return true;
       return false;
     }
