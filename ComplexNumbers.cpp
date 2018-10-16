@@ -155,29 +155,105 @@ int main()
 
 //Selection of operation
         switch (ch) {
-          case 1:
+
+          case 1://addition
                   num3 = num1 + num2;
                   cout<<"\t\t\t\t\t:sum is: "<<endl;
                   cout<<"\t\t\t\t( "<<num1<<" ) + ( "<<num2<<" ) = "<<num3<<endl;
                   break;
 
-          case 2:
+          case 2://subtraction
                   num3 = num1 - num2;
                   cout<<"\t\t\t\t\t:difference is: "<<endl;
                   cout<<"\t\t\t\t( "<<num1<<" ) - ( "<<num2<<" ) = "<<num3<<endl;
                   break;
 
-          case 3:
+          case 3://multiplication
                   num3 = num1 * num2;
                   cout<<"\t\t\t\t\t:product is: "<<endl;
                   cout<<"\t\t\t\t( "<<num1<<" ) * ( "<<num2<<" ) = "<<num3<<endl;
                   break;
 
-          case 4:
+          case 4://Division
                   num3 = num1 / num2;
-                  cout<<"\t\t\t\t\t:quotient is: "<<num3<<endl;
+                  cout<<"\t\t\t\t\t:quotient is: "<<endl;
                   cout<<"\t\t\t\t( "<<num1<<" ) / ( "<<num2<<" ) = "<<num3<<endl;
                   break;
+
+          case 5://scalarMultiplication
+                  int s, c;
+                  cout<<"Which complex number do you want to multiply?"<<endl;
+                  cout<<"1.] "<<num1<<"\t2.] "<<num2<<endl;
+                  cin>>c;
+                  cout<<"Enter the scalar multiplication factor: "<<endl;
+                  cin>>s;
+                  switch (c) {
+                    case 1:
+                            num3 = num1 * s;
+                            cout<<"\t\t\t\t\t:Result is: "<<endl;
+                            cout<<"\t\t\t\t"<<num1<<" * "<<s<<" = "<<num3<<endl;
+                            break;
+
+                    case 2:
+                            num3 = num2 * s;
+                            cout<<"\t\t\t\t\t:Result is: "<<endl;
+                            cout<<"\t\t\t\t"<<num2<<" * "<<s<<" = "<<num3<<endl;
+                            break;
+
+                    default:
+                            cout<<"Enter a valid choice!"<<endl;
+                  }
+                  break;
+
+          case 6://preIncrement
+                  int c_1;
+                  cout<<"Which complex number do you want to preIncrement?"<<endl;
+                  cout<<"1.] "<<num1<<"\t2.] "<<num2<<endl;
+                  cin>>c_1;
+                  switch (c_1) {
+                    case 1:
+                            num1++;
+                            cout<<"\t\t\t\t\t:Result is: "<<endl;
+                            cout<<"\t\t\t\t( "<<num1<<" )++  = "<<num1<<endl;
+                            break;
+
+                    case 2:
+                            num2++;
+                            cout<<"\t\t\t\t\t:Result is: "<<endl;
+                            cout<<"\t\t\t\t( "<<num2<<" )++ = "<<num2<<endl;
+                            break;
+
+                    default:
+                            cout<<"Enter a valid choice!"<<endl;
+                  }
+                  break;
+
+          case 7://postIncrement
+                  int c_2;
+                  cout<<"Which complex number do you want to postIncrement?"<<endl;
+                  cout<<"1.] "<<num1<<"\t2.] "<<num2<<endl;
+                  cin>>c_2;
+                  switch (c_2) {
+                    case 1:
+                            ++num1;
+                            cout<<"\t\t\t\t\t:Result is: "<<endl;
+                            cout<<"\t\t\t\t( "<<num1<<" )++  = "<<num1<<endl;
+                            break;
+
+                    case 2:
+                            ++num2;
+                            cout<<"\t\t\t\t\t:Result is: "<<endl;
+                            cout<<"\t\t\t\t( "<<num2<<" )++ = "<<num2<<endl;
+                            break;
+
+                    default:
+                            cout<<"Enter a valid choice!"<<endl;
+                  }
+                  break;
+
+
+
+
         }
       }
 }
