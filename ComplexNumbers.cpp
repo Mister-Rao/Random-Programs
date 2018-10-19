@@ -85,16 +85,17 @@ class complex
 //operator ++ [pre-increment] Overloading
     complex operator++()
     {
-      ++rl;
-      ++img;
-      return *this;
+      complex t(*this);
+      t.rl++; 
+      t.img++;
+      return t;
     }
 
 //operator ++ [post-increment] Overloading
     complex operator++(int)
     {
       complex temp(*this);
-      ++(*this);
+      ++(temp);
       return temp;
     }
 
@@ -212,15 +213,15 @@ int main()
                   cin>>c_1;
                   switch (c_1) {
                     case 1:
-                            num1++;
+                            num3 = ++num1;
                             cout<<"\t\t\t\t\t:Result is: "<<endl;
-                            cout<<"\t\t\t\t( "<<num1<<" )++  = "<<num1<<endl;
+                            cout<<"\t\t\t\t++( "<<num1<<" )  = "<<num3<<endl;
                             break;
 
                     case 2:
-                            num2++;
+                            num3 = num2++;
                             cout<<"\t\t\t\t\t:Result is: "<<endl;
-                            cout<<"\t\t\t\t( "<<num2<<" )++ = "<<num2<<endl;
+                            cout<<"\t\t\t\t++( "<<num2<<" ) = "<<num3<<endl;
                             break;
 
                     default:
