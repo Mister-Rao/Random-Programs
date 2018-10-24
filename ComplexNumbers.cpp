@@ -138,7 +138,8 @@ class complex
 int main()
 {
         complex num1, num2;
-        int ch, count;
+        int count;
+        char ch;
         cout<<"Enter the First complex number: \t";
         cin>>num1;
         cout<<"\nEnter the Second complex number: \t";
@@ -153,7 +154,7 @@ int main()
         cout<<"\t8.Add and Assign\n\t9.Equality Check\n\n\n";
 
         count = 0;
-        here:
+
         while (1)
        {
         cout<<"\t\tEnter the choice: ";
@@ -163,35 +164,35 @@ int main()
         //Selection of operation
         switch (ch) {
 
-          case 1://addition
+          case '1'://addition
                   num3 = num1 + num2;
                   cout<<"\t\t\t\t\t:sum is: "<<endl;
                   cout<<"\t\t\t\t( "<<num1<<" ) + ( "<<num2<<" ) = "<<num3<<endl;
                   cout<<"\n\n"<<endl;
                   break;
 
-          case 2://subtraction
+          case '2'://subtraction
                   num3 = num1 - num2;
                   cout<<"\t\t\t\t\t:difference is: "<<endl;
                   cout<<"\t\t\t\t( "<<num1<<" ) - ( "<<num2<<" ) = "<<num3<<endl;
                   cout<<"\n\n"<<endl;
                   break;
 
-          case 3://multiplication
+          case '3'://multiplication
                   num3 = num1 * num2;
                   cout<<"\t\t\t\t\t:product is: "<<endl;
                   cout<<"\t\t\t\t( "<<num1<<" ) * ( "<<num2<<" ) = "<<num3<<endl;
                   cout<<"\n\n"<<endl;
                   break;
 
-          case 4://Division
+          case '4'://Division
                   num3 = num1 / num2;
                   cout<<"\t\t\t\t\t:quotient is: "<<endl;
                   cout<<"\t\t\t\t( "<<num1<<" ) / ( "<<num2<<" ) = "<<num3<<endl;
                   cout<<"\n\n"<<endl;
                   break;//end Division
 
-          case 5://scalarMultiplication
+          case '5'://scalarMultiplication
                   int s, c;
                   cout<<"Which complex number do you want to multiply?"<<endl;
                   cout<<"1.] "<<num1<<"\t2.] "<<num2<<endl;
@@ -218,7 +219,7 @@ int main()
                   }
                   break;//end scalarMultiplication
 
-          case 6://preIncrement
+          case '6'://preIncrement
                   int c_1;
                   cout<<"Which complex number do you want to preIncrement?"<<endl;
                   cout<<"1.] "<<num1<<"\t2.] "<<num2<<endl;
@@ -243,7 +244,7 @@ int main()
                   }
                   break;//end preIncrement
 
-          case 7://postIncrement
+          case '7'://postIncrement
                   int c_2;
                   cout<<"Which complex number do you want to postIncrement?"<<endl;
                   cout<<"1.] "<<num1<<"\t2.] "<<num2<<endl;
