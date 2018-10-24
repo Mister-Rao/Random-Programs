@@ -1,5 +1,5 @@
 #include<iostream>
-
+#include<stdlib.h>
 using namespace std;
 
 class complex
@@ -138,48 +138,58 @@ class complex
 int main()
 {
         complex num1, num2;
-        int ch;
-        cout<<"Enter the First complex number: \n";
+        int ch, count;
+        cout<<"Enter the First complex number: \t";
         cin>>num1;
-        cout<<"Enter the Second complex number: \n";
+        cout<<"\nEnter the Second complex number: \t";
         cin>>num2;
 
         complex num3, num4;
 
-        while (1) {
-        cout<<"Select the operation you want to perform:\n";
+        top:
+        cout<<"\n\nSelect the operation you want to perform:\n";
         cout<<"\t1.addition\n\t2.subtraction\n\t3.multiplication\n\t4.Division\n";
         cout<<"\t5.scalarMultiplication\n\t6.preIncrement\n\t7.postIncrement\n";
-        cout<<"\t8.Add and Assign\n\t9.Equality Check\n";
+        cout<<"\t8.Add and Assign\n\t9.Equality Check\n\n\n";
+
+        count = 0;
+        here:
+        while (1)
+       {
         cout<<"\t\tEnter the choice: ";
         cin>>ch;
+        count++;
 
-//Selection of operation
+        //Selection of operation
         switch (ch) {
 
           case 1://addition
                   num3 = num1 + num2;
                   cout<<"\t\t\t\t\t:sum is: "<<endl;
                   cout<<"\t\t\t\t( "<<num1<<" ) + ( "<<num2<<" ) = "<<num3<<endl;
+                  cout<<"\n\n"<<endl;
                   break;
 
           case 2://subtraction
                   num3 = num1 - num2;
                   cout<<"\t\t\t\t\t:difference is: "<<endl;
                   cout<<"\t\t\t\t( "<<num1<<" ) - ( "<<num2<<" ) = "<<num3<<endl;
+                  cout<<"\n\n"<<endl;
                   break;
 
           case 3://multiplication
                   num3 = num1 * num2;
                   cout<<"\t\t\t\t\t:product is: "<<endl;
                   cout<<"\t\t\t\t( "<<num1<<" ) * ( "<<num2<<" ) = "<<num3<<endl;
+                  cout<<"\n\n"<<endl;
                   break;
 
           case 4://Division
                   num3 = num1 / num2;
                   cout<<"\t\t\t\t\t:quotient is: "<<endl;
                   cout<<"\t\t\t\t( "<<num1<<" ) / ( "<<num2<<" ) = "<<num3<<endl;
-                  break;
+                  cout<<"\n\n"<<endl;
+                  break;//end Division
 
           case 5://scalarMultiplication
                   int s, c;
@@ -193,18 +203,20 @@ int main()
                             num3 = num1 * s;
                             cout<<"\t\t\t\t\t:Result is: "<<endl;
                             cout<<"\t\t\t\t"<<num1<<" * "<<s<<" = "<<num3<<endl;
+                            cout<<"\n\n"<<endl;
                             break;
 
                     case 2:
                             num3 = num2 * s;
                             cout<<"\t\t\t\t\t:Result is: "<<endl;
                             cout<<"\t\t\t\t"<<num2<<" * "<<s<<" = "<<num3<<endl;
+                            cout<<"\n\n"<<endl;
                             break;
 
                     default:
                             cout<<"Enter a valid choice!"<<endl;
                   }
-                  break;
+                  break;//end scalarMultiplication
 
           case 6://preIncrement
                   int c_1;
@@ -216,18 +228,20 @@ int main()
                             num3 = ++num1;
                             cout<<"\t\t\t\t\t:Result is: "<<endl;
                             cout<<"\t\t\t\t++( "<<num1<<" )  = "<<num3<<endl;
+                            cout<<"\n\n"<<endl;
                             break;
 
                     case 2:
                             num3 = num2++;
                             cout<<"\t\t\t\t\t:Result is: "<<endl;
                             cout<<"\t\t\t\t++( "<<num2<<" ) = "<<num3<<endl;
+                            cout<<"\n\n"<<endl;
                             break;
 
                     default:
                             cout<<"Enter a valid choice!"<<endl;
                   }
-                  break;
+                  break;//end preIncrement
 
           case 7://postIncrement
                   int c_2;
@@ -239,22 +253,31 @@ int main()
                             ++num1;
                             cout<<"\t\t\t\t\t:Result is: "<<endl;
                             cout<<"\t\t\t\t( "<<num1<<" )++  = "<<num1<<endl;
+                            cout<<"\n\n"<<endl;
                             break;
 
                     case 2:
                             ++num2;
                             cout<<"\t\t\t\t\t:Result is: "<<endl;
                             cout<<"\t\t\t\t( "<<num2<<" )++ = "<<num2<<endl;
+                            cout<<"\n\n"<<endl;
                             break;
 
                     default:
                             cout<<"Enter a valid choice!"<<endl;
                   }
-                  break;
+                  break;//end postIncrement
+          
+          default://Choice handler
+                  cout<<"Enter a valid choice!"<<endl;
+                  
+         }//end switch
 
-
-
-
-        }
-      }
-}
+         if(count == 5){//clear screen handler
+           cin.get();
+           system("clear");
+           count = 0;
+           goto top;}
+      
+      }//end while
+}//end main
